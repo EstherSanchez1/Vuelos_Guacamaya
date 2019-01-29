@@ -4,7 +4,7 @@ module.exports = () => {
   return mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
-    database: 'vuelos_guacamaya'
+    password: null,
+    database: 'vuelos__guacamaya'
   });
 }
