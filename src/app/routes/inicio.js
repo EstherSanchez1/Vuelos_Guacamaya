@@ -1,4 +1,4 @@
-const dbConnection = require('../../config/dbconnection');
+const dbconnection = require('../../config/dbconnection');
 
 module.exports = app => {
 
@@ -6,7 +6,7 @@ module.exports = app => {
 
   app.get('/aeropuertos', (req, res) => {
     connection.query('SELECT * FROM aeropuertos', (err, result) => {
-      res.render('paginaInicio/principal', {
+      res.render('./paginaInicio/principal', {
         aeropuertos: result
       });
     });
@@ -21,7 +21,7 @@ module.exports = app => {
         pais
       }
     , (err, result) => {
-      res.redirect('/inicio');
+      res.redirect('./principal');
     });
   });
 };
