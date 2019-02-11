@@ -1,0 +1,37 @@
+<h2>Aeropuertos de la aerolínea</h2>
+
+<div class="row">
+    <div class="col-md-6 text-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código IATA</th>
+                    <th>Ciudad</th>
+                    <th>País</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each airport}}
+                <div class="airport">
+                <tr>
+                    <td>{{codigo_iata}}</td>
+                    <td>{{ciudad}}</td>
+                    <td>{{pais}}</td>
+                </tr>
+                </div>
+                {{else}}
+                <tr>No hay aeropuertos aún. Agregue un aeropuerto</tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+          
+    <div class="col-md-6 card">
+        <h3>Opciones</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default"><a href="/airport/add">Agregar</a></button>
+            <button type="button" class="btn btn-default">Modificar</button>
+            <button type="button" class="btn btn-default">Eliminar</button>
+        </div>
+    </div>
+</div>

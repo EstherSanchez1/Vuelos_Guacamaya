@@ -1,0 +1,24 @@
+<div class="form-wrap container">
+      <h1>Agregar nuevo aeropuerto</h1>
+      {{#each errors}}
+        <div class="error">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action="/airport/add" method="POST">
+        <div class="form-group">
+          <label for="codigo_iata">Código IATA</label>
+          <input type="text" name="codigo_iata" id="codigo_iata" class="form-control" placeholder="Código IATA del aeropuerto" value={{codigo_iata}}>
+        </div>
+        <div class="form-group">
+          <label for="ciudad">Ciudad</label>
+          <input type="text" name="ciudad" id="ciudad" class="form-control" placeholder="Ciudad donde se encuentra el aeropuerto" value={{ciudad}}>
+        </div>
+        <div class="form-group">
+          <label for="pais">País</label>
+          <input type="text" name="pais" id="pais" class="form-control" placeholder="País donde se encuentra el aeropuerto" value={{pais}}>
+        </div>
+        <input type="submit" value="Aceptar" class="btn btn-reverse">
+        <a href="/airport" class="btn btn-reverse">Cancelar</a>
+      </form>
+    </div>
