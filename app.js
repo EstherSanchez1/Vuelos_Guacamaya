@@ -29,5 +29,8 @@ app.get('/', (req, res) => res.render('principal', { layout: 'landing' }));
 //Airports route
 app.use('/airport', require('./src/app/routes/airport'));
 
+//Planes route
+app.use('/plane', require('./src/app/routes/plane'));
+
 //Start
 app.listen(app.get('port'), () => console.log(`listening on port ${app.get('port')}...`));

@@ -1,18 +1,18 @@
 const Sequelize = require('sequelize');
 const db = require('../config/dbconnection');
 
-const Aeropuertos = db.define('aeropuerto', {
-    codigo_iata: {
+const Pistas_aterrizaje = db.define('pistas_aterrizaje', {
+    codigo_pista: {
       type: Sequelize.STRING,
       primaryKey: true
     },
-    ciudad: {
+    codigo_iata: {
       type: Sequelize.STRING
     },
-    pais: {
-        type: Sequelize.STRING
+    distancia_pista: {
+        type: Sequelize.DOUBLE
       }
   }, {freezeTableName: true, timestamps: false}
   );
 
-  module.exports = Aeropuertos;
+  module.exports = Pistas_aterrizaje;
