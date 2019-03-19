@@ -1,0 +1,37 @@
+<h2>Pistas de aterrizaje</h2>
+
+<div class="row">
+    <div class="col-md-6 text-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><center>Código de pista</center></th>
+                    <th><center>Código IATA</center></th>
+                    <th><center>Distancia en Km</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each pistas}}
+                <div class="pistas">
+                <tr>
+                    <td>{{codigo_pista}}</td>
+                    <td>{{codigo_iata}}</td>
+                    <td>{{distancia_pista}}</td>
+                </tr>
+                </div>
+                {{else}}
+                <tr>No hay pistas aún. Agregue una pista de aterrizaje</tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+          
+    <div class="col-md-6 card">
+        <h3>Opciones</h3>
+        <div class="btn-group">
+            <a href="/airport/pistas/add_pistas" class="btn btn-default" role="button">Agregar</a>
+            <a href="/airport/pistas/borrar_pista" class="btn btn-default" role="button">Eliminar</a>
+            <a href="/airport" class="btn btn-default" role="button">Volver a Aeropuertos</a>
+        </div>
+    </div>
+</div>

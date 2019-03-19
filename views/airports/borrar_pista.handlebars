@@ -1,45 +1,45 @@
-<h2>Eliminar aeropuerto</h2>
-<form action="/airport/borrar" method="POST">
+<h2>Eliminar pista de aterrizaje</h2>
+<form action="/airport/pistas/borrar_pista" method="POST">
     <div class="col-md-6 text-center">
         <table class="table">
             <thead>
                 <tr>
+                    <th><center>Código de pista</center></th>
                     <th><center>Código IATA</center></th>
-                    <th><center>Ciudad</center></th>
-                    <th><center>País</center></th>
+                    <th><center>Distancia en Km</center></th>
                 </tr>
             </thead>
         
             <tbody>
-                {{#each airport}}
-                <div class="airport">
+                {{#each pistas}}
+                <div class="pistas">
                 <tr>
                     <td>
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="checkbox" name="term" class="form-control" value={{codigo_iata}}>
+                                <input type="checkbox" name="term" class="form-control" value={{codigo_pista}}>
                             </div>
                             <div class="col-md-6">
-                                {{codigo_iata}}
+                                {{codigo_pista}}
                             </div>
                         </div>
                     </td>
-                    <td>{{ciudad}}</td>
-                    <td>{{pais}}</td>
+                    <td>{{codigo_iata}}</td>
+                    <td>{{distancia_pista}}</td>
                 </tr>
                 </div>
                 {{else}}
-                <tr>No hay aeropuertos aún. Agregue un aeropuerto</tr>
+                <tr>No hay pistas aún. Agregue una pista de aterrizaje</tr>
                 {{/each}}
             </tbody>
         </table>
     </div>
           
     <div class="col-md-6 card">
-        <h3>Seleccione el aeropuerto que desea eliminar y presione Aceptar</h3>
+        <h3>Seleccione la pista de aterrizaje que desea eliminar y presione Aceptar</h3>
             <div class="col-md-6 card">
                 <input type="submit" value="Aceptar" class="btn btn-default">
-                <a href="/airport" class="btn btn-default" role="button">Volver a Aeropuertos</a>
+                <a href="/airport/pistas" class="btn btn-default" role="button">Volver a Pistas</a>
             </div>
     </div>
 </form>

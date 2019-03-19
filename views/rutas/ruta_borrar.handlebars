@@ -1,0 +1,49 @@
+<h2>Eliminar ruta de vuelo</h2>
+<form action="/rutas/borrar" method="POST">
+    <div class="col-md-6 text-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><center>Código</center></th>
+                    <th><center>Distancia recorrida en Km</center></th>
+                    <th><center>Precio</center></th>
+                    <th><center>Origen</center></th>
+                    <th><center>Destino</center></th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                {{#each ruta}}
+                <div class="ruta">
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="checkbox" name="term" class="form-control" value={{cod_ruta}}>
+                            </div>
+                            <div class="col-md-6">
+                                {{cod_ruta}}
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{kmRecorridos}}</td>
+                    <td>{{precioRuta}}</td>
+                    <td>{{origen}}</td>
+                    <td>{{destino}}</td>
+                </tr>
+                </div>
+                {{else}}
+                <tr>No hay rutas de vuelo aún. Agregue una ruta</tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+          
+    <div class="col-md-6 card">
+        <h3>Seleccione la ruta que desea eliminar y presione Aceptar</h3>
+            <div class="col-md-6 card">
+                <input type="submit" value="Aceptar" class="btn btn-default">
+                <a href="/rutas" class="btn btn-default" role="button">Volver a Rutas de vuelo</a>
+            </div>
+    </div>
+</form>

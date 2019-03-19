@@ -1,0 +1,54 @@
+<div class="form-wrap container">
+      <h1>Agregar nueva ruta de vuelo</h1>
+      {{#each errors}}
+        <div class="error">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action="/rutas/add" method="POST">
+        <div class="form-group">
+          <label for="kmRecorridos">Distancia recorrida en Km</label>
+          <input type="text" name="kmRecorridos" id="kmRecorridos" class="form-control" placeholder="Distancia recorrida en kilómetros" value={{kmRecorridos}}>
+        </div>
+        <div class="form-group">
+          <label for="precioRuta">Precio en dólares</label>
+          <input type="text" name="precioRuta" id="precioRuta" class="form-control" placeholder="Precio que posee la ruta" value={{precioRuta}}>
+        </div>
+        <div class="form-group">
+          <label for="origen">Aeropuerto de origen</label>
+        {{#each aeropuerto}}
+          <div class="aeropuerto">
+            <div class="row">
+              <div class="col-md-1">
+                <p class="form-control">{{codigo_iata}}</p>
+              </div>
+              <div class="col-md-1">
+                <input class="btn btn-default form-control" type="checkbox" name="origen" value={{codigo_iata}}>
+              </div>
+            </div>
+        {{else}}
+              <p class="dropdown-item">No hay aeropuertos aún. Agregue un aeropuerto</p>
+        {{/each}}
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="origen">Aeropuerto destino</label>
+        {{#each aeropuerto}}
+          <div class="aeropuerto">
+            <div class="row">
+              <div class="col-md-1">
+                <p class="form-control">{{codigo_iata}}</p>
+              </div>
+              <div class="col-md-1">
+                <input class="btn btn-default form-control" type="checkbox" name="destino" value={{codigo_iata}}>
+              </div>
+            </div>
+        {{else}}
+              <p class="dropdown-item">No hay aeropuertos aún. Agregue un aeropuerto</p>
+        {{/each}}
+        </div>
+        </div>
+        <input type="submit" value="Aceptar" class="btn btn-default">
+        <a href="/rutas" class="btn btn-default" role="button">Cancelar</a>
+      </form>
+    </div>

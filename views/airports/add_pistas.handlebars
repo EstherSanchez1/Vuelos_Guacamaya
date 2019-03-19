@@ -1,24 +1,37 @@
 <div class="form-wrap container">
       <h1>Agregar pista de aterrizaje de un aeropuerto</h1>
       {{#each errors}}
-        <div class="error2">
+        <div class="error">
           <p>{{text}}</p>
         </div>
       {{/each}}
-      <form action="/airport/add_pistas" method="POST">
+      <form action="/airport/pistas/add_pistas" method="POST">
         <div class="form-group">
-          <label for="codigo_iata2">Código IATA</label>
-          <input type="text" name="codigo_iata2" id="codigo_iata2" class="form-control" placeholder="Código IATA del aeropuerto donde se encuentra la pista de aterrizaje" value={{codigo_iata2}}>
+          <label for="codigo_iata">Código IATA</label>
+          {{#each airport}}
+          <div class="airport">
+            <div class="row">
+              <div class="col-md-1">
+                <p class="form-control">{{codigo_iata}}</p>
+              </div>
+              <div class="col-md-1">
+                <input class="btn btn-default form-control" type="checkbox" name="codigo_iata2" value={{codigo_iata}}>
+              </div>
+            </div>
+          {{else}}
+              <p class="dropdown-item">No hay aeropuertos aún. Agregue un aeropuerto</p>
+          {{/each}}
+          </div>
         </div>
         <div class="form-group">
           <label for="codigo_pista">Código de la pista de aterrizaje</label>
-          <input type="text" name="codigo_pista" id="codigo_pista" class="form-control" placeholder="Código único de la pista" value={{codigo_pista}}>
+          <input type="text" name="codigo_pista" id="codigo_pista" class="form-control" placeholder="Código único de la pista">
         </div>
         <div class="form-group">
           <label for="distancia_pista">Distancia de la pista en aterrizaje en kilómetros</label>
-          <input type="text" name="distancia_pista" id="distancia_pista" class="form-control" placeholder="Distancia de la pista de aterrizaje" value={{distancia_pista}}>
+          <input type="text" name="distancia_pista" id="distancia_pista" class="form-control" placeholder="Distancia de la pista de aterrizaje">
         </div>
         <input type="submit" value="Aceptar" class="btn btn-reverse">
-        <a href="/airport" class="btn btn-default" role="button">Cancelar</a>
+        <a href="/airport/pistas" class="btn btn-default" role="button">Cancelar</a>
       </form>
     </div>

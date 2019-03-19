@@ -1,0 +1,40 @@
+<h2>Rutas de vuelo</h2>
+
+<div class="row">
+    <div class="col-md-6 text-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><center>Código</center></th>
+                    <th><center>Distancia recorrida en Km</center></th>
+                    <th><center>Precio</center></th>
+                    <th><center>Origen</center></th>
+                    <th><center>Destino</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each ruta}}
+                <div class="ruta">
+                <tr>
+                    <td>{{cod_ruta}}</td>
+                    <td>{{kmRecorridos}}</td>
+                    <td>{{precioRuta}}</td>
+                    <td>{{origen}}</td>
+                    <td>{{destino}}</td>
+                </tr>
+                </div>
+                {{else}}
+                <tr>No hay rutas de vuelo aún. Agregue una ruta</tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+          
+    <div class="col-md-6 card">
+        <h3>Opciones</h3>
+        <div class="btn-group">
+            <a href="/rutas/add" class="btn btn-default" role="button">Agregar</a>
+            <a href="/rutas/borrar" class="btn btn-default" role="button">Eliminar</a>
+        </div>
+    </div>
+</div>
